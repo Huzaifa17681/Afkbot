@@ -25,23 +25,13 @@ async function sleep(ms) {
 }
 
 bot.once("spawn", async function () {
-  await sleep(4000);
+  await sleep(1000);
   bot.setQuickBarSlot(4);
-  await sleep(4000);
+  await sleep(1000);
   bot.activateItem();
+  await sleep(1000);
+  bot.clickWindow(14, 0, 0);
 
-  bot.on("windowOpen", async function (window) {
-    // Added async here
-    await sleep(4000);
-    bot.clickWindow(14, 0, 0);
-    bot.clickWindow(14, 0, 0);
-    await sleep(1000);
-    console.log(window);
-    bot.clickWindow(14, 0, 0);
-    bot.clickWindow(14, 0, 0);
-    await sleep(4000);
-    bot.chat("/msg GamerBoy321123 im on !!");
-  });
 });
 
 // Fixed event name from 'messagestr' to 'message'
